@@ -230,7 +230,10 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
       <section className='section banner pt-0'>
         <div className='container-xl'>
           <div className='relative'>
-            <div className='bg-theme banner-bg  absolute bottom-0 left-0 right-0 top-0 opacity-15 '>
+            <div
+              style={{ zIndex: -999999 }}
+              className='bg-theme banner-bg  absolute bottom-0 left-0 right-0 top-0 opacity-15 '
+            >
               <Circle className='circle left-[10%] top-12' width={32} height={32} fill={false} />
               <Circle className='circle left-[2.5%] top-[29%]' width={85} height={85} />
               <Circle className='circle bottom-[48%] left-[22%]' width={20} height={20} />
@@ -249,13 +252,13 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 style={{ zIndex: -122 }}
               ></div>
 
-              <div className='col-12 h-[600px]'>
+              <div className='col-12 h-[600px] '>
                 <div className='row relative justify-center pb-10'>
-                  <div className='banner-content col-10 pb-10 pt-20 text-center'>
+                  <div className='banner-content col-10 pb-10 pt-20 text-center '>
                     {markdownify(
                       'Al-Hazm Co. offers the latest and most luxurious cars for rent. We are committed to ensuring the comfort of our customers',
                       'h1',
-                      'mb-8 banner-title opacity-0 text-2xl lg:text-5xl text-[#d1b984] text-shadow-[0_4px_4px_rgba(0,0,0,0.25)]',
+                      'mb-8 banner-title opacity-0 text-2xl lg:text-5xl text-[#FDB501] text-shadow-[0_4px_4px_rgba(0,0,0,0.25)]',
                     )}
                     {/* <div className="banner-btn opacity-0">
                       <Link className="btn btn-primary" href={banner.link.href}>
@@ -263,18 +266,12 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                       </Link>
                     </div> */}
                   </div>
-                  <div className='col-10'>
-                    {/* <ImageFallback
-                      className="banner-img opacity-0"
-                      src={mainImg}
-                      width={1170}
-                      height={666}
-                      priority={true}
-                      alt=""
-                    /> */}
-                  </div>
                 </div>
               </div>
+              <div
+                style={{ zIndex: -99 }}
+                className=' absolute bottom-0 left-0 right-0 top-0 bg-black opacity-40'
+              ></div>
             </div>
             <div className='row mt-10 border-y border-border py-5'>
               <div className='animate from-right col-12'>
