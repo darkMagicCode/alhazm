@@ -3,6 +3,7 @@ import { gsap } from '@lib/gsap';
 import { plainify } from '@lib/utils/textConverter';
 import Footer from '@partials/Footer';
 import Header from '@partials/Header';
+import logo from '../public/images/logo.jpg';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
@@ -113,7 +114,9 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:image' content={`${base_url}${image ? image : meta_image}`} />
         <meta name='twitter:card' content='summary_large_image' />
         {/* WhatsApp meta tags */}
-        <meta property='og:image' content={`${base_url}${image ? image : meta_image}`} />
+        <meta property='og:image' content={`${logo}`} />
+        <meta property='og:image:width' content='1200' />
+<meta property='og:image:height' content='630' />
         <meta property='og:image:alt' content={plainify(description ? description : meta_description)} />
       </Head>
       <Header />
