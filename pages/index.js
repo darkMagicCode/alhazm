@@ -260,7 +260,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     {markdownify(
                       'Al-Hazm Co. offers the latest and most luxurious cars for rent. We are committed to ensuring the comfort of our customers',
                       'h1',
-                      'mb-8 banner-title opacity-0 text-2xl lg:text-5xl text-[#FDB501] text-shadow-[0_4px_4px_rgba(0,0,0,0.25)]',
+                      'mb-8 banner-title opacity-0 text-2xl lg:text-5xl text-primary text-shadow-[0_4px_4px_rgba(0,0,0,0.25)]',
                     )}
                     {/* <div className="banner-btn opacity-0">
                       <Link className="btn btn-primary" href={banner.link.href}>
