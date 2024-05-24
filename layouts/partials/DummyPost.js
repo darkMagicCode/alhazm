@@ -55,13 +55,17 @@ const DummyPost = props => {
   };
   const message1 = {
     message:
-      `Hello, I'm interested in your services. Please see the attached image. Attach the image here: [${props.Link.frontmatter.image}]`,
+      `Hello, I'm interested in your services. `,
   };
+  let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
+
+  // Appending the message to the URL by encoding it
+    // url += ``;
   return (
     <div className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'>
       {props.Link.frontmatter?.image && (
         // <Link href={`/${blog_folder}/${props.Link.slug}`}>
-        <Link href={'/'} onClick={() =>   console.log(`https://wa.me/${phoneNumber}?text=${message1.message}`)      }>
+        <Link href={'/'} onClick={() =>   console.log(url)      }>
           <ImageFallback
             className='  h-80 w-full object-cover object-fill object-center'
             src={props.Link.frontmatter.image}
