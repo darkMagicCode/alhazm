@@ -119,7 +119,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
           rel="apple-touch-icon"
           href={logo}
         /> */}
-        <link rel="icon" href={logo} />
+        {/* <link rel="icon" href={logo} /> */}
         <meta
           property="og:image"
           // itemprop="image"
