@@ -64,6 +64,7 @@ const DummyPost = props => {
      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(url ,"_blank" )
+    // window.location.href= '/'
     // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   }
 
@@ -131,7 +132,10 @@ const DummyPost = props => {
         </div>
       </div>
       <div
-        onClick={handleWhatsappClick}
+        onClick={(e)=>{
+          e.stopPropagation();
+          handleWhatsappClick();
+        }}
         className='btn btn-primary flex items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300'
       >
         <ImageFallback src={carRentalIcon} width={25} height={25} alt='author' className='mr-2 ' />
