@@ -43,7 +43,7 @@ const DummyPost = props => {
     return null; // Or a loading spinner
   }
   const phoneNumber = '+201095559522'; // Ensure this is the correct phone number format
-  const message = encodeURIComponent(props.Link.frontmatter.image, props.Link.frontmatter?.title); // Encode the message for the URL
+  const message = 'Check out this amazing website: https://yourwebsite.com';
   // const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
   // console.log(`https://wa.me/${phoneNumber}?text=${message1.message}`);
   const x = {
@@ -58,6 +58,7 @@ const DummyPost = props => {
     message: `Hello, I'm interested in your services. `,
   };
   // let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   // Appending the message to the URL by encoding it
   // url += ``;
@@ -124,14 +125,15 @@ const DummyPost = props => {
         </div>
       </div>
       <Link
-        href={config.nav_button.link}
+        href={whatsappUrl}
         className='btn btn-primary flex items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300'
       >
         <ImageFallback src={carRentalIcon} width={25} height={25} alt='author' className='mr-2 ' />
 
         {config.nav_button.label}
+
       </Link>
-      <SocialShare url={url} title={title} description={description} imageUrl={imageUrl1} />
+      {/* <SocialShare url={url} title={title} description={description} imageUrl={imageUrl1} /> */}
 
       <span
         style={{ zIndex: 2 }}
