@@ -8,11 +8,9 @@ banner:
 
 ##brands
 brands:
-  - /images/brands/images.png
-  - /images/brands/images (1).png
-  - /images/brands/st-regis-hotels4625.jpg
-  - /images/brands/images (2).png
-  - /images/brands/1679167298041.jpg
+  - /images/brand1.jpg
+  - /images/brand2.jpg
+  - /images/brand33.png
   # - /images/brands/06-colored.png
   # - /images/brands/04-colored.png
   # - /images/brands/05-colored.png

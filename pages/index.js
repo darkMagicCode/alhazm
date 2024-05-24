@@ -24,6 +24,7 @@ import Link33 from '../public/images/car2/3.jpg';
 import Link111 from '../public/images/car3/1.jpg';
 import Link222 from '../public/images/car3/2.jpg';
 import Link333 from '../public/images/car3/3.jpg';
+import logo1 from '../public/images/file.png';
 import logo from '../public/images/logo.jpg';
 
 const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
@@ -246,15 +247,16 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
               <Circle className='circle bottom-[20%] right-[3%]' width={65} height={65} />
             </div>
 
-            <div className='row relative overflow-hidden rounded-2xl '>
+            <div className='row relative overflow-hidden rounded-2xl opacity-100'>
               <div
                 class='image-div absolute bottom-[0px] left-[0px] right-[0px] top-[0px] rounded-2xl'
-                style={{ zIndex: -122 }}
+                style={{ zIndex: -100 }}
               ></div>
 
               <div className='col-12 h-[600px] '>
                 <div className='row relative justify-center pb-10'>
-                  <div className='banner-content col-10 pb-10 pt-20 text-center '>
+                  <div className='banner-content col-10 pb-10 pt-0 text-center items-center'>
+                    <ImageFallback src={logo1} width={'w-full'} height={'w-full'} className='banner-title'/>
                     {markdownify(
                       'Al-Hazm Co. offers the latest and most luxurious cars for rent. We are committed to ensuring the comfort of our customers',
                       'h1',
@@ -270,7 +272,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
               </div>
               <div
                 style={{ zIndex: -99 }}
-                className=' absolute bottom-0 left-0 right-0 top-0 bg-black opacity-40'
+                className=' absolute bottom-0 left-0 right-0 top-0 bg-black opacity-80 '
               ></div>
             </div>
             <div className='row mt-10 border-y border-border py-5'>
@@ -322,35 +324,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         </div>
       </section>
 
-      {/* Short Into */}
-      <section className='section pt-0'>
-        <div className='container-xl'>
-          <div className='relative px-4 py-[70px]'>
-            <div className='text-center'>
-              <div className='animate'>
-                <p>{intro.subtitle}</p>
-                {markdownify(intro.title, 'h2', 'mt-4 section-title')}
-                {markdownify(intro.description, 'p', 'mt-10')}
-              </div>
-              <div className='max-h-2394px] mx-auto mt-10 h-full w-full max-w-[716px]'>
-                <VideoPopupV id={intro.video_id} thumbnail={intro.thumbnail} />
-              </div>
-            </div>
-            <div className='bg-theme absolute left-0 top-0 w-full'>
-              <Circle className='left-[10%] top-12' width={32} height={32} fill={false} />
-              <Circle className='left-[3%] top-[30%]' width={85} height={85} />
-              <Circle className='bottom-[52%] left-[22%]' width={20} height={20} />
-              <Circle className='bottom-[35%] left-[15%]' width={47} height={47} fill={false} />
-              <Circle className='bottom-[6%] left-[6%]' width={62} height={62} fill={false} />
-              <Circle className='right-[12%] top-[12%]' width={20} height={20} />
-              <Circle className='right-[2%] top-[30%]' width={73} height={73} fill={false} />
-              <Circle className='right-[19%] top-[50%]' width={37} height={37} fill={false} />
-              <Circle className='right-[33%] top-[52%]' width={20} height={20} />
-              <Circle className='bottom-[18%] right-[5%]' width={65} height={65} />
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Special Features */}
       {/* <section className="section">
@@ -412,7 +386,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
-                <div className='rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
+                <div className='rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
                   {
                     <Swiper
                       modules={[Pagination, Autoplay]}
@@ -483,7 +457,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
-                <div className='rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
+                <div className='rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
                   {
                     <Swiper
                       modules={[Pagination, Autoplay]}
@@ -554,7 +528,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
-                <div className='rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
+                <div className='rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
                   {
                     <Swiper
                       modules={[Pagination, Autoplay]}
@@ -667,6 +641,35 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
             </Swiper>
             <div className='relative mt-9 flex justify-center'>
               <div className='pagination ms-20 ' ref={paginationRef}></div>
+            </div>
+          </div>
+        </div>
+      </section>
+       {/* Short Into */}
+       <section className='section pt-0'>
+        <div className='container-xl'>
+          <div className='relative px-4 py-[70px]'>
+            <div className='text-center'>
+              <div className='animate'>
+                <p>{intro.subtitle}</p>
+                {markdownify(intro.title, 'h2', 'mt-4 section-title')}
+                {markdownify(intro.description, 'p', 'mt-10')}
+              </div>
+              <div className='max-h-2394px] mx-auto mt-10 h-full w-full max-w-[716px]'>
+                <VideoPopupV id={intro.video_id} thumbnail={intro.thumbnail} />
+              </div>
+            </div>
+            <div className='bg-theme absolute left-0 top-0 w-full'>
+              <Circle className='left-[10%] top-12' width={32} height={32} fill={false} />
+              <Circle className='left-[3%] top-[30%]' width={85} height={85} />
+              <Circle className='bottom-[52%] left-[22%]' width={20} height={20} />
+              <Circle className='bottom-[35%] left-[15%]' width={47} height={47} fill={false} />
+              <Circle className='bottom-[6%] left-[6%]' width={62} height={62} fill={false} />
+              <Circle className='right-[12%] top-[12%]' width={20} height={20} />
+              <Circle className='right-[2%] top-[30%]' width={73} height={73} fill={false} />
+              <Circle className='right-[19%] top-[50%]' width={37} height={37} fill={false} />
+              <Circle className='right-[33%] top-[52%]' width={20} height={20} />
+              <Circle className='bottom-[18%] right-[5%]' width={65} height={65} />
             </div>
           </div>
         </div>
