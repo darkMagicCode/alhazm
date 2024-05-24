@@ -11,12 +11,13 @@ import Cta from "./components/Cta";
 import ImageFallback from "./components/ImageFallback";
 import Post from "./partials/Post";
 
-const PostSingle = ({ frontmatter, content, mdxContent, recentPosts ,name , folder}) => {
+const PostSingle = ({ frontmatter, content, mdxContent, recentPosts }) => {
   let { description, title, date, image, author } = frontmatter;
   description = description ? description : content.slice(0, 120);
+  const {  folder, name } = frontmatter;
 
   const { disqus } = config;
-
+  console.log(folder, name );
   return (
     <Base title={title} description={description} name={name} folder={folder}>
       <section className="section pt-0">
