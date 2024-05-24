@@ -10,7 +10,7 @@ banner:
 brands:
   - /images/brand1.jpg
   - /images/brand2.jpg
-  - /images/brand33.png
+  - /images/brand33.jpg
   # - /images/brands/06-colored.png
   # - /images/brands/04-colored.png
   # - /images/brands/05-colored.png
