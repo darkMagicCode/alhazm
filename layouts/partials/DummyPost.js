@@ -42,7 +42,7 @@ const DummyPost = props => {
     return null; // Or a loading spinner
   }
   const phoneNumber = '+201095559522'; // Ensure this is the correct phone number format
-  const message = `Iam Interested In Your Services: https://alhazm-car-rental.vercel.app/${props.Link?.slug}`;
+  const message = `Iam Interested In Your Services: https://alhazm-car-rental.vercel.app/posts/${props.Link?.slug}`;
   // const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
   // console.log(`https://wa.me/${phoneNumber}?text=${message1.message}`);
   const x = {
