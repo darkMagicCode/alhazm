@@ -122,7 +122,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <link rel="icon" href={logo} />
         <meta
           property="og:image"
-          itemprop="image"
+          // itemprop="image"
           content={logo}
         />
         {/* <link rel="canonical" href={logo} /> */}
