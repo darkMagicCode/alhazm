@@ -120,7 +120,7 @@
   @apply relative bg-[50%] bg-contain h-full  -z-[1]  rounded-2xl;
 
   &::before {
-    @apply content-[''] absolute left-0 top-0 w-full h-full rounded-[30px] bg-contain bg-no-repeat bg-[#D9AF62] scale-[.3] transition-transform duration-[1500ms] ease-[cubic-bezier(.105,.84,.44,1)] -z-[1];
+    @apply content-[''] absolute left-0 top-0 w-full h-full rounded-[30px] bg-contain bg-no-repeat bg-[#F2A922] scale-[.3] transition-transform duration-[1500ms] ease-[cubic-bezier(.105,.84,.44,1)] -z-[1];
   }
 
   &::after {
@@ -202,7 +202,7 @@
 
 //testimonial
 .testimonial-slider{
-  background-image: url("data:image/svg+xml,%3Csvg width='462' height='458' viewBox='0 0 462 458' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36.9901 53.2939C8.66553 90.8729-.680565 197.569.0380893 247.72 3.02596 456.228 136.937 460.573 283.124 457.125 406.681 454.211 459.969 401.82 461.426 261.777 462.591 149.742 432.9 78.8779 413.134 60.3019 326.242-21.359 89.5954-16.4987 36.9901 53.2939z' fill='%23D9AF62'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='462' height='458' viewBox='0 0 462 458' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36.9901 53.2939C8.66553 90.8729-.680565 197.569.0380893 247.72 3.02596 456.228 136.937 460.573 283.124 457.125 406.681 454.211 459.969 401.82 461.426 261.777 462.591 149.742 432.9 78.8779 413.134 60.3019 326.242-21.359 89.5954-16.4987 36.9901 53.2939z' fill='%23F2A922'/%3E%3C/svg%3E");
   @apply bg-no-repeat bg-contain h-full bg-[center_top];
 }
 

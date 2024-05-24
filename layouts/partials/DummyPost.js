@@ -5,7 +5,7 @@ import Link333 from '../../public/images/rental-car.svg';
 import star from '../../public/images/star.svg';
 import love from '../../public/images/love.svg';
 import config from '@config/config.json';
-import { IconButton } from '@material-tailwind/react';
+import { IconButton, Typography } from '@material-tailwind/react';
 
 const DummyPost = props => {
   // const props.Link = {
@@ -41,11 +41,27 @@ const DummyPost = props => {
   if (!loveUrl) {
     return null; // Or a loading spinner
   }
-
+  const phoneNumber = '+201095559522'; // Ensure this is the correct phone number format
+  const message = encodeURIComponent(props.Link.frontmatter.image, props.Link.frontmatter?.title); // Encode the message for the URL
+  // const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
+  // console.log(`https://wa.me/${phoneNumber}?text=${message1.message}`);
+  const x = {
+    nav_button: {
+      phoneNumber: '1234567890',
+      message:
+        "Hello, I'm interested in your services. Please see the attached image. Attach the image here: [Your image URL or instructions]",
+      label: 'Contact Us',
+    },
+  };
+  const message1 = {
+    message:
+      `Hello, I'm interested in your services. Please see the attached image. Attach the image here: [${props.Link.frontmatter.image}]`,
+  };
   return (
     <div className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'>
       {props.Link.frontmatter?.image && (
-        <Link href={`/${blog_folder}/${props.Link.slug}`}>
+        // <Link href={`/${blog_folder}/${props.Link.slug}`}>
+        <Link href={'/'} onClick={() =>   console.log(`https://wa.me/${phoneNumber}?text=${message1.message}`)      }>
           <ImageFallback
             className='  h-80 w-full object-cover object-fill object-center'
             src={props.Link.frontmatter.image}
@@ -55,50 +71,38 @@ const DummyPost = props => {
           />
         </Link>
       )}
-      <div className='p-8'>
+      <div className='px-8 py-4'>
         <h2 className='h4'>
-          <Link href={`/${blog_folder}/${props.Link.slug}`} className='block hover:text-primary hover:underline'>
+          <Link href={`/${blog_folder}/${props.Link.slug}`} className='block w-full hover:text-primary hover:underline'>
             {props.Link.frontmatter?.title}
           </Link>
         </h2>
-        <p className='mt-4'>{props.Link.content?.slice(0, summary_length)}...</p>
-        <div className='mt-6 flex items-center'>
+        {/* <p className='mt-2'>{props.Link.content?.slice(0, summary_length)}...</p> */}
+        <div className='mt-4 flex items-center'>
           <div className='overflow-hidden rounded-full border-2 border-white shadow-[0_0_0_2px] shadow-primary'>
             <ImageFallback src={props.Link.frontmatter?.author?.avatar} width={50} height={50} alt='author' />
           </div>
           <div className='pl-5'>
             {/* <p className='font-medium text-dark'>{props.Link.frontmatter?.author?.name}</p> */}
-            <p>
-              <div class='mb-5 mt-2.5 flex items-center'>
-                <span class='mr-2 rounded bg-primary px-2.5 py-0.5 text-xs font-semibold'>5.0</span>
-
-                <ImageFallback src={imageUrl} width={25} height={25} alt='star' />
-                <ImageFallback src={imageUrl} width={25} height={25} alt='star' />
-                <ImageFallback src={imageUrl} width={25} height={25} alt='star' />
-                <ImageFallback src={imageUrl} width={25} height={25} alt='star' />
-                <ImageFallback src={imageUrl} width={25} height={25} alt='star' />
-
-                <IconButton variant='text'
-                onClick={() => setloveClicked(true)}
+            <p className='flex'>
+              <Typography color='blue-gray' className='me-2 font-medium'>
+                From 200$
+              </Typography>
+              <Typography color='blue-gray' className='flex items-center gap-1.5 font-normal'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 24 24'
+                  fill='currentColor'
+                  className='-mt-0.5 h-5 w-5 text-yellow-700'
                 >
-                  <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill={loveClicked ? '#D9AF62' : 'none'}
-                    viewBox='0 0 24 24'
-                    stroke-width='1.5'
-                    stroke='#D9AF62'
-                    class='size-6'
-                  >
-                    <path
-                      stroke-linecap='round'
-                      stroke-linejoin='round'
-                      d='M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z'
-                    />
-
-                  </svg>
-                  1k
-                </IconButton>
-              </div>
+                  <path
+                    fillRule='evenodd'
+                    d='M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z'
+                    clipRule='evenodd'
+                  />
+                </svg>
+                5.0
+              </Typography>
             </p>
           </div>
         </div>
@@ -115,6 +119,18 @@ const DummyPost = props => {
       <span className='absolute left-0 top-0 m-2 rounded-full bg-primary px-2 text-center text-sm font-medium text-white'>
         39% OFF
       </span>
+      <IconButton
+        size='sm'
+        color={loveClicked ? 'red' : 'white'}
+        onClick={() => setloveClicked(true)}
+        variant='text'
+        className='absolute right-4 top-4 rounded-full'
+      >
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' className='h-6 w-6'>
+          <path d='M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z' />
+        </svg>
+        1k
+      </IconButton>
     </div>
   );
 };
