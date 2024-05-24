@@ -8,6 +8,8 @@ const Document = () => {
   return (
     <Html lang="en">
       <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         {/* favicon */}
         <link rel="shortcut icon" href={favicon} />
         {/* theme meta */}

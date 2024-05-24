@@ -236,7 +236,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
       <section className="section banner pt-0">
         <div className="container-xl">
           <div className="relative">
-            <div className="bg-theme banner-bg col-12 absolute left-0 top-0">
+            <div className="bg-theme banner-bg  absolute left-0 top-0 opacity-15 right-0 bottom-0 ">
               <Circle
                 className="circle left-[10%] top-12"
                 width={32}
@@ -294,11 +294,11 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
               />
             </div>
 
-            <div
-              className="row relative overflow-hidden rounded-2xl"
-              // style={{ backgroundColor: '#d1b984c7' }}
-            >
-              <div class="image-div absolute bottom-0 left-0 right-0 top-0"></div>
+            <div className="row relative overflow-hidden rounded-2xl ">
+              <div
+                class="image-div absolute bottom-[0px] left-[0px] right-[0px] top-[0px] rounded-2xl"
+                style={{ zIndex: -122 }}
+              ></div>
 
               <div className="col-12 h-[600px]">
                 <div className="row relative justify-center pb-10">
@@ -374,8 +374,6 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
           </div>
         </div>
       </section>
-
-
 
       {/* Short Into */}
       <section className="section pt-0">
@@ -725,8 +723,8 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
           </div>
         </div>
       </section>
-  {/* Features */}
-  <section className="section">
+      {/* Features */}
+      <section className="section">
         <div className="container text-center">
           <div className="animate">
             <p className="uppercase">{features.sub_title}</p>
