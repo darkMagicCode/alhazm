@@ -8,13 +8,13 @@
     <img src="https://img.shields.io/static/v1?label=NEXTJS&message=13.0&color=000&logo=nextjs" />
   </a>
 
-  <a href="https://github.com//AlHazam-light-nextjs/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license//AlHazam-light-nextjs" alt="license"></a>
+  <a href="https://github.com/void/AlHazam-light-nextjs/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/void/AlHazam-light-nextjs" alt="license"></a>
 
-  <img src="https://img.shields.io/github/languages/code-size//AlHazam-light-nextjs" alt="code size">
+  <img src="https://img.shields.io/github/languages/code-size/void/AlHazam-light-nextjs" alt="code size">
 
-  <a href="https://github.com//AlHazam-light-nextjs/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors//bigspring-light-nextjs" alt="contributors"></a>
+  <a href="https://github.com/void/AlHazam-light-nextjs/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/void/bigspring-light-nextjs" alt="contributors"></a>
 </p>
 
 ![AlHazam-light](https://demo.gethugothemes.com/thumbnails/AlHazam-light.png)
@@ -86,20 +86,20 @@ npm run build
 <!-- reporting issue -->
 ## 🐞Reporting Issues
 
-We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com//AlHazam-light-nextjs/issues). It’s possible someone has already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com//AlHazam-light-nextjs/issues).
+We use GitHub Issues as the official bug tracker for this Template. Please Search [existing issues](https://github.com/void/AlHazam-light-nextjs/issues). It’s possible someone has already reported the same problem.
+If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/void/AlHazam-light-nextjs/issues).
 
 <!-- support -->
 ## 💬Technical Support or Questions (Paid)
 
-If you have questions or need help integrating the product please [contact us](https://.com/contact) instead of opening an issue.
+If you have questions or need help integrating the product please [contact us](https://void.com/contact) instead of opening an issue.
 
 <!-- licence -->
 ## 📄License
 
-Copyright (c) 2016 - Present, Designed & Developed by [](https://.com)
+Copyright (c) 2016 - Present, Designed & Developed by [void](https://void.com)
 
-**Code License:** Released under the [MIT](https://github.com//AlHazam-light-nextjs/blob/main/LICENSE) license.
+**Code License:** Released under the [MIT](https://github.com/void/AlHazam-light-nextjs/blob/main/LICENSE) license.
 
 **Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
 
@@ -108,11 +108,11 @@ Copyright (c) 2016 - Present, Designed & Developed by [](https://.com)
 Besides developing unique, blazing-fast Nextjs templates, we also provide customized services. We specialize in creating affordable, high-quality static websites based on Nextjs.
 
 If you need to customize the theme or complete website development from scratch, you can hire us. **Check Our
-[Contact Page](https://.com/contact)**
+[Contact Page](https://void.com/contact)**
 
 ## 👉Nextjs Templates By Us
 
-<a href="https://.com/products/bigspring-light-nextjs">
+<a href="https://void.com/products/bigspring-light-nextjs">
 <img src="https://demo.gethugothemes.com/thumbnails/bigspring.png" height="300" width="400"/>
 <p>Bigspring Light Nextjs</p>
 </a>
