@@ -6,7 +6,6 @@ import star from '../../public/images/star.svg';
 import love from '../../public/images/love.svg';
 import config from '@config/config.json';
 import { IconButton, Typography } from '@material-tailwind/react';
-import SocialShare from '@layouts/SocialShare';
 
 const DummyPost = props => {
   // const props.Link = {
