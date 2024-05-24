@@ -1,0 +1,58 @@
+{
+  "site": {
+    "title": "AlHazm",
+    "base_url": "/",
+    "favicon": "/images/logo.jpg",
+    "logo": "/images/logo.jpg",
+    "logo_width": "240",
+    "logo_height": "80",
+    "logo_text": "AlHazm"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 200,
+    "blog_folder": "posts"
+  },
+
+  "params": {
+    "tag_manager_id": "",
+    "contact_form_action": "#",
+    "footer_content": "Experience luxury and comfort with AlHazm. Our premium car rental services are tailored for your needs.",
+    "copyright": "Void.co"
+  },
+
+  "contact_info": {
+    "phone": "+20 109 555 9522",
+    "email": "alhazmcarrental@gmail.com",
+    "location": "29 Al Basra, Mit Akaba, Agouza, Giza Governorate 12655"
+  },
+
+  "nav_button": {
+    "enable": true,
+    "label": "Book Now",
+    "link": "https://wa.me/+201095559522"
+  },
+
+  "metadata": {
+    "meta_author": "Void.co",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "AlHazm - Premium Car Rental Services"
+  },
+
+  "call_to_action": {
+    "enable": true,
+    "title": "Get AlHazm Now",
+    "content": "Experience the ultimate in luxury car rentals with AlHazm. Our premium services ensure you travel in style and comfort.",
+    "button": {
+      "label": "Book Your Ride",
+      "link": "https://wa.me/+201095559522"
+    }
+  },
+
+  "disqus": {
+    "enable": true,
+    "shortname": "Void.co",
+    "settings": {}
+  }
+}
