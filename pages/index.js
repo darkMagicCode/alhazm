@@ -29,6 +29,8 @@ import logo from '../public/images/logo.jpg';
 const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
   const paginationRef = useRef(null);
   const testimonialPaginationRef = useRef(null);
+  const testimonialPaginationRef1 = useRef(null);
+  const testimonialPaginationRef2 = useRef(null);
   const x = [
     {
       frontmatter: {
@@ -186,7 +188,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         },
       });
 
-      const position = (banner.offsetHeight  - bannerBg.offsetHeight ) * 0.4;
+      const position = (banner.offsetHeight - bannerBg.offsetHeight) * 0.4;
       parallaxTl
         .fromTo(
           bannerBg,
@@ -224,8 +226,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
 
   return (
     <Base>
-      <section className='section banner pt-0'
-      >
+      <section className='section banner pt-0'>
         <div className='container-xl'>
           <div className='relative'>
             <div className='bg-theme banner-bg  absolute bottom-0 left-0 right-0 top-0 opacity-15 '>
@@ -274,11 +275,10 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 </div>
               </div>
             </div>
-            <div className='row border-y border-border py-5 mt-10'>
+            <div className='row mt-10 border-y border-border py-5'>
               <div className='animate from-right col-12'>
                 <Swiper
-                                      modules={[Pagination, Autoplay]}
-
+                  modules={[Pagination, Autoplay]}
                   // slidesPerView={1}
                   pagination={{
                     el: testimonialPaginationRef.current,
@@ -306,7 +306,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     >
                       <div className='relative h-full'>
                         <ImageFallback
-                          className='object-contain w-full h-full'
+                          className='h-full w-full object-contain'
                           src={brand}
                           sizes='100vw'
                           alt=''
@@ -413,27 +413,36 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
-                <div className='md:col-7 lg:col-6 xl:col-4'>
+                <div className='rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
                   {
                     <Swiper
                       modules={[Pagination, Autoplay]}
                       pagination={{
-                        el: testimonialPaginationRef.current,
+                        el: testimonialPaginationRef1.current,
                         type: 'bullets',
                         dynamicBullets: true,
                         clickable: true,
                       }}
                       autoplay={{ delay: 3000 }}
                       onBeforeInit={swiper => {
-                        swiper.params.pagination.el = testimonialPaginationRef.current;
+                        swiper.params.pagination.el = testimonialPaginationRef1.current;
                       }}
-                      className='testimonial-slidear mx-auto max-w-[620px] cursor-pointer lg:max-w-[680px] bgs-slate-600 sahadow-lg'
+                      // slidesPerView={1}
+                      // breakpoints={{
+                      //   768: {
+                      //     slidesPerView: 1,
+                      //   },
+                      //   1200: {
+                      //     slidesPerView: 1,
+                      //   },
+                      // }}
+                      className='testimonial-slidear bgs-slate-600 mx-auto max-w-[620px] cursor-pointer rounded-2xl shadow-[0_0_0_2px] shadow-[0_10px_35px_rgba(0,0,0,.05)] shadow-primary lg:max-w-[680px]'
                     >
                       {x.map((item, index) => (
                         <SwiperSlide className='text-center ' key={'testimonial-' + index}>
                           <div
                           //  className='px-8 py-6 sm:py-12 md:px-10 lg:px-20 xl:px-12 '
-                           >
+                          >
                             {/* <TbQuote className="mx-auto rotate-180 text-5xl text-body sm:text-6xl lg:text-8xl" />
                             {markdownify(
                               item.content,
@@ -460,7 +469,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     </Swiper>
                   }
                   <div className='relative h-8'>
-                    <div className='pagination absolute left-1/2 -translate-x-1/2' ref={testimonialPaginationRef}></div>
+                    <div className='pagination absolute left-1/2 -translate-x-1/2' ref={testimonialPaginationRef1}></div>
                   </div>
                 </div>
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
@@ -476,14 +485,14 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     <Swiper
                       modules={[Pagination, Autoplay]}
                       pagination={{
-                        el: testimonialPaginationRef.current,
+                        el: testimonialPaginationRef2.current,
                         type: 'bullets',
                         dynamicBullets: true,
                         clickable: true,
                       }}
                       autoplay={{ delay: 3000 }}
                       onBeforeInit={swiper => {
-                        swiper.params.pagination.el = testimonialPaginationRef.current;
+                        swiper.params.pagination.el = testimonialPaginationRef2.current;
                       }}
                       className='testimonial-slider mx-auto max-w-[420px] cursor-pointer lg:max-w-[480px]'
                     >
@@ -515,7 +524,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     </Swiper>
                   }
                   <div className='relative h-8'>
-                    <div className='pagination absolute left-1/2 -translate-x-1/2' ref={testimonialPaginationRef}></div>
+                    <div className='pagination absolute left-1/2 -translate-x-1/2' ref={testimonialPaginationRef2}></div>
                   </div>
                 </div>
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
