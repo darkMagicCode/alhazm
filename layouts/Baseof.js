@@ -8,7 +8,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 
-const Base = ({ title, meta_title, description, image, noindex, canonical, children,name,folder }) => {
+const Base = ({ title, meta_title, description, image, noindex, canonical, children, name, folder }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
   const { base_url } = config.site;
   const router = useRouter();
@@ -78,7 +78,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
       <Head>
         {/* title */}
         <title>{plainify(meta_title ? meta_title : title ? title : config.site.title)}</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        {/* <meta name='viewport' content='width=device-width, initial-scale=1' /> */}
         {/* <meta property="og:image" content="https://domain.tld/image.jpg"/> */}
 
         <meta name='AlHazam' content='AlHazam premium car rental services' />
@@ -110,10 +110,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:description' content={plainify(description ? description : meta_description)} />
 
         {/* og-image */}
-        <meta name='og:image'
-        content={
-          `${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`
-          } />
+        <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`} />
         {/* <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2Fcar1%2F3.jpg&w=1200&q=75`} /> */}
 
         {/* twitter-image */}

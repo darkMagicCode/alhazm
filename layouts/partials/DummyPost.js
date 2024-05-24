@@ -60,7 +60,11 @@ const DummyPost = props => {
 
   // let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
   // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const handleWhatsappClick = () => {
+    const url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
+    window.open(url ,"_blank" )
+    // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  }
 
   // Appending the message to the URL by encoding it
   // url += ``;
@@ -125,15 +129,15 @@ const DummyPost = props => {
           </div>
         </div>
       </div>
-      <Link
-        href={whatsappUrl}
+      <div
+        onClick={handleWhatsappClick}
         className='btn btn-primary flex items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300'
       >
         <ImageFallback src={carRentalIcon} width={25} height={25} alt='author' className='mr-2 ' />
 
         {config.nav_button.label}
 
-      </Link>
+      </div>
       {/* <SocialShare url={url} title={title} description={description} imageUrl={imageUrl1} /> */}
 
       <span
