@@ -57,7 +57,7 @@ const Header = () => {
                 href={'/'}
                 className={` active block transition-all `}
               >
-                Al-Hazm
+                {/* Al-Hazm */}
               </Link>
             </div>
           </div>
