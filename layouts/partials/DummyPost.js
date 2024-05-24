@@ -61,7 +61,8 @@ const DummyPost = props => {
   // let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
   // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const handleWhatsappClick = () => {
-    const url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message1.message)}`;
+     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
     window.open(url ,"_blank" )
     // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   }
