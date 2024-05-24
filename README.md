@@ -1,6 +1,5 @@
 
 ## 🔑Key Features
-- 📄 7+ Pre-Designed Pages
 - 🚀 Google Page Speed score 100! (Desktop)
 - 🎨 Tailwind CSS
 - 🌍 SEO-Friendly
@@ -8,8 +7,6 @@
 - ✉️ Supports Contact Form
 - 📊 Google Analytics support
 - 💬 Disqus Comment Support
-- 🖼️ Custom Logo Support
-- 👥 Multi-Author
 - 🌐 Semantic HTML Document Structure
 - 🎨 Includes All SCSS Files
 - 🌅 Image Optimized With Next/image
