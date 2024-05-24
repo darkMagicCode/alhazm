@@ -1,8 +1,8 @@
 ---
 title: Mercedes
 image: /images/car1/1.jpg
-folder: 1
-name: 1
+folder: car1
+name: 1.jpg
 author:
   name: Mercedes
   avatar: /images/car1/1.jpg

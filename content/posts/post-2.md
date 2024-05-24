@@ -1,8 +1,8 @@
 ---
 title: Range Rovers.
 image: /images/car2/1.jpg
-folder: 2
-name: 2
+folder: car2
+name: 1.jpg
 author:
   name: Range Rovers.
   avatar: /images/car2/2.jpg

@@ -1,8 +1,8 @@
 ---
 title: The Real Product From the Buyers improvements in Overflow basis.
 image: /images/car3/1.jpg
-folder: 3
-name: 3
+folder: car3
+name: 1.jpg
 author:
   name: Range Rover
   avatar: /images/car3/2.jpg

@@ -8,6 +8,7 @@ const { blog_folder } = config.settings;
 // post single layout
 const Article = ({ post, authors, mdxContent, slug, recentPosts }) => {
   const { frontmatter, content } = post[0];
+  const { title, image, folder, name } = frontmatter;
 
   return (
     <PostSingle
@@ -17,6 +18,8 @@ const Article = ({ post, authors, mdxContent, slug, recentPosts }) => {
       authors={authors}
       slug={slug}
       recentPosts={recentPosts}
+      name={name}
+      folder={folder}
     />
   );
 };

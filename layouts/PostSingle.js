@@ -11,14 +11,14 @@ import Cta from "./components/Cta";
 import ImageFallback from "./components/ImageFallback";
 import Post from "./partials/Post";
 
-const PostSingle = ({ frontmatter, content, mdxContent, recentPosts }) => {
+const PostSingle = ({ frontmatter, content, mdxContent, recentPosts ,name , folder}) => {
   let { description, title, date, image, author } = frontmatter;
   description = description ? description : content.slice(0, 120);
 
   const { disqus } = config;
 
   return (
-    <Base title={title} description={description}>
+    <Base title={title} description={description} name={name} folder={folder}>
       <section className="section pt-0">
         <div className="container">
           <article>

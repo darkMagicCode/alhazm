@@ -1,28 +1,22 @@
-import Pagination from "@components/Pagination";
-import config from "@config/config.json";
-import Base from "@layouts/Baseof";
-import Banner from "@layouts/components/Banner";
-import Cta from "@layouts/components/Cta";
-import { getListPage, getSinglePage } from "@lib/contentParser";
-import { gsap } from "@lib/gsap";
-import Post from "@partials/Post";
-import { useEffect, useRef } from "react";
+import Pagination from '@components/Pagination';
+import config from '@config/config.json';
+import Base from '@layouts/Baseof';
+import Banner from '@layouts/components/Banner';
+import Cta from '@layouts/components/Cta';
+import { getListPage, getSinglePage } from '@lib/contentParser';
+import { gsap } from '@lib/gsap';
+import Post from '@partials/Post';
+import { useEffect, useRef } from 'react';
 const { blog_folder } = config.settings;
 
 // blog pagination
-const BlogPagination = ({
-  postIndex,
-  posts,
-  authors,
-  currentPage,
-  pagination,
-}) => {
+const BlogPagination = ({ postIndex, posts, authors, currentPage, pagination }) => {
   const indexOfLastPost = currentPage * pagination;
   const indexOfFirstPost = indexOfLastPost - pagination;
   const totalPages = Math.ceil(posts.length / pagination);
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   const { frontmatter } = postIndex;
-  const { title,image,folder,name } = frontmatter;
+  const { title, image, folder, name } = frontmatter;
   const postsRef = useRef(null);
 
   useEffect(() => {
@@ -35,28 +29,21 @@ const BlogPagination = ({
 
     return () => ctx.revert();
   }, []);
-  console.log(image);
+  console.log(name);
 
   return (
     <Base title={title} description={title} meta_title={title} image={image} folder={folder} name={name}>
-      <section className="section pt-0">
+      <section className='section pt-0'>
         <Banner title={title} />
-        <div className="container">
-          <div
-            className="row justify-center pt-20 pb-16 opacity-0"
-            ref={postsRef}
-          >
+        <div className='container'>
+          <div className='row justify-center pb-16 pt-20 opacity-0' ref={postsRef}>
             {currentPosts.map((post, i) => (
-              <div key={`key-${i}`} className="mb-8 lg:col-5">
+              <div key={`key-${i}`} className='mb-8 lg:col-5'>
                 <Post post={post} authors={authors} />
               </div>
             ))}
           </div>
-          <Pagination
-            section={blog_folder}
-            totalPages={totalPages}
-            currentPage={currentPage}
-          />
+          <Pagination section={blog_folder} totalPages={totalPages} currentPage={currentPage} />
         </div>
       </section>
       {/* CTA */}
@@ -70,7 +57,7 @@ export default BlogPagination;
 // get blog pagination slug
 export const getStaticPaths = () => {
   const getAllSlug = getSinglePage(`content/${blog_folder}`);
-  const allSlug = getAllSlug.map((item) => item.slug);
+  const allSlug = getAllSlug.map(item => item.slug);
   const { pagination } = config.settings;
   const totalPages = Math.ceil(allSlug.length / pagination);
   let paths = [];
