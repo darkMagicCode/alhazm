@@ -114,11 +114,18 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:image' content={`${base_url}${image ? image : meta_image}`} />
         <meta name='twitter:card' content='summary_large_image' />
         {/* WhatsApp meta tags */}
-        <meta property='og:title' content={`${base_url}${image ? image : meta_image}`} />
-        <meta property='og:description' content={`${base_url}${image ? image : meta_image}`} />
-        <meta property='og:url' content={`${base_url}${image ? image : meta_image}`} />
-        <meta property='og:image' content={logo} />
-        <meta property='og:type' content='article' />
+        <meta name="description" content={`${base_url}${image ? image : meta_image}`} />
+        <link
+          rel="apple-touch-icon"
+          href={logo}
+        />
+        <link rel="icon" href={logo} />
+        <meta
+          property="og:image"
+          itemprop="image"
+          content={logo}
+        />
+        <link rel="canonical" href={logo} />
 
 
       </Head>
