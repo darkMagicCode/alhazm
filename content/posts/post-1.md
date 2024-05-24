@@ -1,6 +1,6 @@
 ---
 title: Mercedes
-image: /images/car/1.jpg
+image: /images/car1/1.jpg
 folder: 1
 name: 1
 author:
