@@ -54,7 +54,7 @@ const Header = () => {
             <div className="nav-dropdown-item" key={`children-${''}`}>
               <Link
                 style={{ color: '#D9AF62' }}
-                href={''}
+                href={'/'}
                 className={` active block transition-all `}
               >
                 Al-Hazm
