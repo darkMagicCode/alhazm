@@ -78,6 +78,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         {/* title */}
         <title>{plainify(meta_title ? meta_title : title ? title : config.site.title)}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
+        {/* <meta property="og:image" content="https://domain.tld/image.jpg"/> */}
 
         <meta name='AlHazam' content='AlHazam-light-nextjs' />
 
@@ -114,20 +115,20 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:image' content={`${base_url}${image ? image : meta_image}`} />
         <meta name='twitter:card' content='summary_large_image' />
         {/* WhatsApp meta tags */}
-        <meta name="description" content={`${base_url}${image ? image : meta_image}`} />
+        <meta name='description' content={`${base_url}${image ? image : meta_image}`} />
         {/* <link
           rel="apple-touch-icon"
           href={logo}
         /> */}
         {/* <link rel="icon" href={logo} /> */}
         <meta
-          property="og:image"
+          property='og:image'
           // itemprop="image"
-          content={logo}
+          content={
+            'https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/307486267_478264784323046_501080229019256398_n.jpg?stp=cp6_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGyY-5dCdHvw9S34xTiaezM0RkwMFACcyjRGTAwUAJzKEeIPJb6YZbstNbv152yZQdkgWjRRTJC83lGW902b77i&_nc_ohc=GZVYPhrYRuoQ7kNvgGJeI0I&_nc_ht=scontent.fcai19-3.fna&oh=00_AYCqmaEbnWYMVAEd22aiq30h6qR9f0ISVD1752zHTBCK7Q&oe=66567FFA'
+          }
         />
         {/* <link rel="canonical" href={logo} /> */}
-
-
       </Head>
       <Header />
       {/* main site */}
