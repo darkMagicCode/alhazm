@@ -114,7 +114,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:image' content={`${base_url}${image ? image : meta_image}`} />
         <meta name='twitter:card' content='summary_large_image' />
         {/* WhatsApp meta tags */}
-        <meta name="description" content={`${base_url}${image ? image : meta_image}`} />
+        {/* <meta name="description" content={`${base_url}${image ? image : meta_image}`} />
         <link
           rel="apple-touch-icon"
           href={logo}
@@ -125,7 +125,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
           itemprop="image"
           content={logo}
         />
-        <link rel="canonical" href={logo} />
+        <link rel="canonical" href={logo} /> */}
 
 
       </Head>
