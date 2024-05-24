@@ -44,7 +44,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-1',
     },
     {
       frontmatter: {
@@ -57,7 +57,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-1',
     },
     {
       frontmatter: {
@@ -70,7 +70,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-1',
     },
   ];
   const y = [
@@ -85,7 +85,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-2',
     },
     {
       frontmatter: {
@@ -98,7 +98,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-2',
     },
     {
       frontmatter: {
@@ -111,7 +111,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-2',
     },
   ];
   const z = [
@@ -126,7 +126,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-4',
     },
     {
       frontmatter: {
@@ -139,7 +139,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-3',
     },
     {
       frontmatter: {
@@ -152,7 +152,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'dummy-post',
+      slug: 'post-3',
     },
   ];
   useEffect(() => {

@@ -42,7 +42,7 @@ const DummyPost = props => {
     return null; // Or a loading spinner
   }
   const phoneNumber = '+201095559522'; // Ensure this is the correct phone number format
-  const message = 'Check out this amazing website: https://yourwebsite.com';
+  const message = `Iam Interested In Your Services: https://alhazm-car-rental.vercel.app/${props.Link?.slug}`;
   // const waLink = `https://wa.me/${phoneNumber}?text=${message}`;
   // console.log(`https://wa.me/${phoneNumber}?text=${message1.message}`);
   const x = {
@@ -56,7 +56,10 @@ const DummyPost = props => {
   const message1 = {
     message: `Hello, I'm interested in your services. `,
   };
+  const imageUrl1 = 'props.Link.frontmatter.image';
+
   // let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
+  // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   // Appending the message to the URL by encoding it
@@ -64,7 +67,6 @@ const DummyPost = props => {
   const url = 'https://alhazm-car-rental.vercel.app';
   const title = props.Link.frontmatter?.title;
   const description = 'AlHazam premium car rental services';
-  const imageUrl1 = props.Link.frontmatter.image;
 
   return (
     <div className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'>
