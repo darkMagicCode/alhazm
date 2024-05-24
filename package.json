@@ -10,9 +10,9 @@
     "lint": "next lint",
     "start": "next start",
     "format": "prettier --write 'src/**/*.js'"
-
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.9",
     "disqus-react": "^1.1.5",
     "feather-icons-react": "^0.6.2",
     "github-slugger": "^2.0.0",

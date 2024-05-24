@@ -31,6 +31,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
   const testimonialPaginationRef = useRef(null);
   const testimonialPaginationRef1 = useRef(null);
   const testimonialPaginationRef2 = useRef(null);
+  const brandRef = useRef(null);
   const x = [
     {
       frontmatter: {
@@ -280,15 +281,16 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 <Swiper
                   modules={[Pagination, Autoplay]}
                   // slidesPerView={1}
+                  loop
                   pagination={{
-                    el: testimonialPaginationRef.current,
+                    el: brandRef.current,
                     type: 'bullets',
                     dynamicBullets: true,
                     clickable: true,
                   }}
                   autoplay={{ delay: 3000 }}
                   onBeforeInit={swiper => {
-                    swiper.params.pagination.el = testimonialPaginationRef.current;
+                    swiper.params.pagination.el = brandRef.current;
                   }}
                   breakpoints={{
                     768: {
@@ -417,6 +419,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                   {
                     <Swiper
                       modules={[Pagination, Autoplay]}
+                      loop
                       pagination={{
                         el: testimonialPaginationRef1.current,
                         type: 'bullets',
@@ -469,7 +472,10 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     </Swiper>
                   }
                   <div className='relative h-8'>
-                    <div className='pagination absolute left-1/2 -translate-x-1/2' ref={testimonialPaginationRef1}></div>
+                    <div
+                      className='pagination absolute left-1/2 -translate-x-1/2'
+                      ref={testimonialPaginationRef1}
+                    ></div>
                   </div>
                 </div>
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
@@ -480,25 +486,37 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
-                <div className='md:col-7 lg:col-6 xl:col-4'>
+                <div className='rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
                   {
                     <Swiper
                       modules={[Pagination, Autoplay]}
+                      loop
                       pagination={{
                         el: testimonialPaginationRef2.current,
                         type: 'bullets',
                         dynamicBullets: true,
                         clickable: true,
                       }}
-                      autoplay={{ delay: 3000 }}
+                      autoplay={{ delay: 3500 }}
                       onBeforeInit={swiper => {
                         swiper.params.pagination.el = testimonialPaginationRef2.current;
                       }}
-                      className='testimonial-slider mx-auto max-w-[420px] cursor-pointer lg:max-w-[480px]'
+                      // slidesPerView={1}
+                      // breakpoints={{
+                      //   768: {
+                      //     slidesPerView: 1,
+                      //   },
+                      //   1200: {
+                      //     slidesPerView: 1,
+                      //   },
+                      // }}
+                      className='testimonial-slidear bgs-slate-600 mx-auto max-w-[620px] cursor-pointer rounded-2xl shadow-[0_0_0_2px] shadow-[0_10px_35px_rgba(0,0,0,.05)] shadow-primary lg:max-w-[680px]'
                     >
                       {y.map((item, index) => (
-                        <SwiperSlide className='text-center' key={'testimonial-' + index}>
-                          <div className='px-8 py-6 sm:py-12 md:px-10 lg:px-20 xl:px-12'>
+                        <SwiperSlide className='text-center ' key={'testimonial-' + index}>
+                          <div
+                          //  className='px-8 py-6 sm:py-12 md:px-10 lg:px-20 xl:px-12 '
+                          >
                             {/* <TbQuote className="mx-auto rotate-180 text-5xl text-body sm:text-6xl lg:text-8xl" />
                             {markdownify(
                               item.content,
@@ -506,6 +524,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                               "text-[17px] lg:text-lg text-body mt-4 md:mt-5 xl:mt-8"
                             )} */}
                             <DummyPost Link={item} />
+
                             {/* <div className="mt-7 inline-block rounded-md y p-7 shadow-[0_10px_50px_rgba(0,0,0,.08)] md:mt-5 lg:mt-8 xl:mt-5 h-4">
                               <ImageFallback
                                 className="mx-auto rounded-full"
@@ -524,7 +543,10 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     </Swiper>
                   }
                   <div className='relative h-8'>
-                    <div className='pagination absolute left-1/2 -translate-x-1/2' ref={testimonialPaginationRef2}></div>
+                    <div
+                      className='pagination absolute left-1/2 -translate-x-1/2'
+                      ref={testimonialPaginationRef2}
+                    ></div>
                   </div>
                 </div>
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
@@ -535,25 +557,37 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
-                <div className='md:col-7 lg:col-6 xl:col-4'>
+                <div className='rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
                   {
                     <Swiper
                       modules={[Pagination, Autoplay]}
+                      loop
                       pagination={{
                         el: testimonialPaginationRef.current,
                         type: 'bullets',
                         dynamicBullets: true,
                         clickable: true,
                       }}
-                      autoplay={{ delay: 3000 }}
+                      autoplay={{ delay: 4000 }}
                       onBeforeInit={swiper => {
                         swiper.params.pagination.el = testimonialPaginationRef.current;
                       }}
-                      className='testimonial-slider mx-auto max-w-[420px] cursor-pointer lg:max-w-[480px]'
+                      // slidesPerView={1}
+                      // breakpoints={{
+                      //   768: {
+                      //     slidesPerView: 1,
+                      //   },
+                      //   1200: {
+                      //     slidesPerView: 1,
+                      //   },
+                      // }}
+                      className='testimonial-slidear bgs-slate-600 mx-auto max-w-[620px] cursor-pointer rounded-2xl shadow-[0_0_0_2px] shadow-[0_10px_35px_rgba(0,0,0,.05)] shadow-primary lg:max-w-[680px]'
                     >
                       {z.map((item, index) => (
-                        <SwiperSlide className='text-center' key={'testimonial-' + index}>
-                          <div className='px-8 py-6 sm:py-12 md:px-10 lg:px-20 xl:px-12'>
+                        <SwiperSlide className='text-center ' key={'testimonial-' + index}>
+                          <div
+                          //  className='px-8 py-6 sm:py-12 md:px-10 lg:px-20 xl:px-12 '
+                          >
                             {/* <TbQuote className="mx-auto rotate-180 text-5xl text-body sm:text-6xl lg:text-8xl" />
                             {markdownify(
                               item.content,
@@ -561,6 +595,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                               "text-[17px] lg:text-lg text-body mt-4 md:mt-5 xl:mt-8"
                             )} */}
                             <DummyPost Link={item} />
+
                             {/* <div className="mt-7 inline-block rounded-md y p-7 shadow-[0_10px_50px_rgba(0,0,0,.08)] md:mt-5 lg:mt-8 xl:mt-5 h-4">
                               <ImageFallback
                                 className="mx-auto rounded-full"

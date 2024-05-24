@@ -53,7 +53,7 @@ const Header = () => {
             {/* <Logo src={logo} /> */}
             <div className="nav-dropdown-item" key={`children-${''}`}>
               <Link
-                style={{ color: '#d1b984c7' }}
+                style={{ color: '#D9AF62' }}
                 href={''}
                 className={` active block transition-all `}
               >
