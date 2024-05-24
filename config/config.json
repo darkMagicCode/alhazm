@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "AlHazm",
-    "base_url": "/",
+    "base_url": "https://alhazm-car-rental.vercel.app/",
     "favicon": "/images/logo.jpg",
     "logo": "/images/logo.jpg",
     "logo_width": "240",

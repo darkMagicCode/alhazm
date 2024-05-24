@@ -22,7 +22,7 @@ const BlogPagination = ({
   const totalPages = Math.ceil(posts.length / pagination);
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
   const { frontmatter } = postIndex;
-  const { title } = frontmatter;
+  const { title,image,folder,name } = frontmatter;
   const postsRef = useRef(null);
 
   useEffect(() => {
@@ -35,9 +35,10 @@ const BlogPagination = ({
 
     return () => ctx.revert();
   }, []);
+  console.log(image);
 
   return (
-    <Base title={title}>
+    <Base title={title} description={title} meta_title={title} image={image} folder={folder} name={name}>
       <section className="section pt-0">
         <Banner title={title} />
         <div className="container">

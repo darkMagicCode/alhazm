@@ -23,7 +23,7 @@ const DummyPost = props => {
   // };
 
   const summary_length = 100; // Dummy value for summary length
-  const blog_folder = 'blog'; // Dummy value for blog folder
+  const blog_folder = 'posts'; // Dummy value for blog folder
   const [imageUrl, setImageUrl] = useState(null);
   const [loveUrl, setloveUrl] = useState(null);
   const [loveClicked, setloveClicked] = useState(false);
@@ -64,15 +64,15 @@ const DummyPost = props => {
 
   // Appending the message to the URL by encoding it
   // url += ``;
-  const url = 'https://alhazm-car-rental.vercel.app';
+  const url = `/${blog_folder}/${props.Link.slug}` ;
   const title = props.Link.frontmatter?.title;
   const description = 'AlHazam premium car rental services';
 
   return (
-    <div className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'>
+    <div onClick={()=> window.location.href = url} className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'>
       {props.Link.frontmatter?.image && (
         // <Link href={`/${blog_folder}/${props.Link.slug}`}>
-        <Link href={'/'} onClick={() => console.log(url)}>
+        <Link href={`/${blog_folder}/${props.Link.slug}`} onClick={() => console.log(url)}>
           <div className='relative'>
             <ImageFallback
               className='  h-80 w-full object-cover object-fill object-center '

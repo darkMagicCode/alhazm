@@ -71,6 +71,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
 
     return () => ctx.revert();
   }, []);
+  console.log(`${base_url}_next/image?url=%2Fimages%2Fcar1%2F3.jpg&w=1200&q=75`);
 
   return (
     <>
@@ -100,7 +101,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         {/* og-description */}
         <meta property='og:description' content={plainify(description ? description : meta_description)} />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content={`${base_url}/${router.asPath.replace('/', '')}`} />
+        <meta property='og:url' content={`${base_url}${router.asPath.replace('/', '')}`} />
 
         {/* twitter-title */}
         <meta name='twitter:title' content={plainify(meta_title ? meta_title : title ? title : config.site.title)} />
@@ -109,7 +110,11 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:description' content={plainify(description ? description : meta_description)} />
 
         {/* og-image */}
-        {/* <meta property='og:image' content={logo} /> */}
+        <meta name='og:image'
+        content={
+          `${base_url}_next/image?url=%2Fimages%2Fcar1%2F3.jpg&w=1200&q=75`
+          } />
+        {/* <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2Fcar1%2F3.jpg&w=1200&q=75`} /> */}
 
         {/* twitter-image */}
         <meta name='twitter:image' content={`${base_url}${image ? image : meta_image}`} />
@@ -121,13 +126,11 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
           href={logo}
         /> */}
         {/* <link rel="icon" href={logo} /> */}
-        <meta
+        {/* <meta
           property='og:image'
           // itemprop="image"
-          content={
-            'https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/307486267_478264784323046_501080229019256398_n.jpg?stp=cp6_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGyY-5dCdHvw9S34xTiaezM0RkwMFACcyjRGTAwUAJzKEeIPJb6YZbstNbv152yZQdkgWjRRTJC83lGW902b77i&_nc_ohc=GZVYPhrYRuoQ7kNvgGJeI0I&_nc_ht=scontent.fcai19-3.fna&oh=00_AYCqmaEbnWYMVAEd22aiq30h6qR9f0ISVD1752zHTBCK7Q&oe=66567FFA'
-          }
-        />
+          content={`${base_url}/_next/image?url=${image ? image : meta_image}`}
+        /> */}
         {/* <link rel="canonical" href={logo} /> */}
       </Head>
       <Header />
