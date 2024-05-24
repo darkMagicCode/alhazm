@@ -91,6 +91,7 @@ const Header = () => {
                           </Link>
                         </li>
                       ))}
+
                     </ul>
                   </li>
                 ) : (
@@ -105,6 +106,7 @@ const Header = () => {
                     </Link>
                   </li>
                 )}
+
               </React.Fragment>
             ))}
             {config.nav_button.enable && (
@@ -121,7 +123,7 @@ const Header = () => {
           <div className="order-1 ml-auto flex items-center md:ml-0">
             {config.nav_button.enable && (
               <Link
-                className="btn btn-primary hidden lg:flex"
+                className="btn btn-primary hiddena lg:flex"
                 href={config.nav_button.link}
               >
                 {config.nav_button.label}
@@ -131,14 +133,14 @@ const Header = () => {
             {/* navbar toggler */}
             {showMenu ? (
               <button
-                className="h-8 w-8 text-3xl text-dark lg:hidden"
+                className="h-8 w-8 text-3xl text-dark lg:hidden ms-10"
                 onClick={() => setShowMenu(!showMenu)}
               >
                 <CgClose />
               </button>
             ) : (
               <button
-                className="text-dark lg:hidden"
+                className="text-dark lg:hidden ms-10"
                 onClick={() => setShowMenu(!showMenu)}
               >
                 <svg
