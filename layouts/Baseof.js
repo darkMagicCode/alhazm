@@ -80,7 +80,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         {/* <meta property="og:image" content="https://domain.tld/image.jpg"/> */}
 
-        <meta name='AlHazam' content='AlHazam-light-nextjs' />
+        <meta name='AlHazam' content='AlHazam premium car rental services' />
 
         {/* canonical url */}
         {canonical && <link rel='canonical' href={canonical} itemProp='url' />}

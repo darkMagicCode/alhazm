@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ImageFallback from '@layouts/components/ImageFallback';
 import Link from 'next/link';
-import Link333 from '../../public/images/rental-car.svg';
+import carRentalIcon from '../../public/images/rental-car.svg';
 import star from '../../public/images/star.svg';
 import love from '../../public/images/love.svg';
 import config from '@config/config.json';
 import { IconButton, Typography } from '@material-tailwind/react';
+import SocialShare from '@layouts/SocialShare';
 
 const DummyPost = props => {
   // const props.Link = {
@@ -56,10 +57,15 @@ const DummyPost = props => {
   const message1 = {
     message: `Hello, I'm interested in your services. `,
   };
-  let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
+  // let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
 
   // Appending the message to the URL by encoding it
   // url += ``;
+  const url = 'https://alhazm-car-rental.vercel.app';
+  const title = props.Link.frontmatter?.title;
+  const description = 'AlHazam premium car rental services';
+  const imageUrl1 = props.Link.frontmatter.image;
+
   return (
     <div className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'>
       {props.Link.frontmatter?.image && (
@@ -74,27 +80,30 @@ const DummyPost = props => {
               height={335}
             />
 
-            <div style={{ zIndex: 1 }} className=' absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-black via-black to-transparent opacity-30'></div>
+            <div
+              style={{ zIndex: 1 }}
+              className=' absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-black via-black to-transparent opacity-30'
+            ></div>
           </div>
         </Link>
       )}
-      <div className='px-8 py-4  bg-gradient-to-b from-[#fdb6013a] via-[#fdb6013f] to-transparent  '>
+      <div className='bg-gradient-to-b from-[#fdb6013a]  via-[#fdb6013f] to-transparent px-8 py-4  '>
         <h2 className='h4'>
           <Link href={`/${blog_folder}/${props.Link.slug}`} className='block w-full hover:text-primary hover:underline'>
             {props.Link.frontmatter?.title}
           </Link>
         </h2>
         {/* <p className='mt-2'>{props.Link.content?.slice(0, summary_length)}...</p> */}
-        <div className='mt-4 flex justify-between items-center'>
+        <div className='mt-4 flex items-center justify-between'>
           <div className='overflow-hidden rounded-full border-2 border-white shadow-[0_0_0_2px] shadow-primary'>
             <ImageFallback src={props.Link.frontmatter?.author?.avatar} width={50} height={50} alt='author' />
           </div>
-              <Typography color='blue-gray' className=' font-medium'>
-                From 200$
-              </Typography>
+          <Typography color='blue-gray' className=' font-medium'>
+            From 200$
+          </Typography>
           <div className='pl-5'>
             {/* <p className='font-medium text-dark'>{props.Link.frontmatter?.author?.name}</p> */}
-            <p className='flex justify-evenly items-center'>
+            <p className='flex items-center justify-evenly'>
               <Typography color='blue-gray' className='flex items-center gap-1.5 font-normal'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -118,17 +127,20 @@ const DummyPost = props => {
         href={config.nav_button.link}
         className='btn btn-primary flex items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-medium text-white  focus:outline-none focus:ring-4 focus:ring-blue-300'
       >
-        <ImageFallback src={Link333} width={25} height={25} alt='author' className='mr-2 ' />
+        <ImageFallback src={carRentalIcon} width={25} height={25} alt='author' className='mr-2 ' />
 
         {config.nav_button.label}
       </Link>
+      <SocialShare url={url} title={title} description={description} imageUrl={imageUrl1} />
 
       <span
-      style={{ zIndex: 2 }} className='absolute left-0 top-0 m-2 rounded-full bg-primary px-2 text-center text-sm font-medium text-white'>
+        style={{ zIndex: 2 }}
+        className='absolute left-0 top-0 m-2 rounded-full bg-primary px-2 text-center text-sm font-medium text-white'
+      >
         39% OFF
       </span>
       <IconButton
-      style={{ zIndex: 2 }}
+        style={{ zIndex: 2 }}
         size='sm'
         color={loveClicked ? 'red' : 'white'}
         onClick={() => setloveClicked(true)}
