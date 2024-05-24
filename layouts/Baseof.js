@@ -112,6 +112,9 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         {/* twitter-image */}
         <meta name='twitter:image' content={`${base_url}${image ? image : meta_image}`} />
         <meta name='twitter:card' content='summary_large_image' />
+        {/* WhatsApp meta tags */}
+        <meta property='og:image' content={`${base_url}${image ? image : meta_image}`} />
+        <meta property='og:image:alt' content={plainify(description ? description : meta_description)} />
       </Head>
       <Header />
       {/* main site */}
