@@ -1,12 +1,21 @@
 import TwSizeIndicator from '@components/TwSizeIndicator';
 import config from '@config/config.json';
 import { Head, Html, Main, NextScript } from 'next/document';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 const Document = () => {
   // destructuring items from config object
   const { favicon } = config.site;
-  const baseUrl = window.location.origin;
-  const currentPath = window.location.pathname;
+  const router = useRouter();
+  const { pathname } = router;
+
+  const [currentPath, setcurrentPath] = useState(pathname)
+  useEffect(() => {
+    setcurrentPath(window.location.pathname)
+
+  }, [currentPath])
+  console.log(currentPath);
   return (
     <Html lang='en'>
       <Head>
