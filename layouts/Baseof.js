@@ -111,7 +111,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
 
         {/* og-image */}
         {
-          name && folder ?
+          !imgUrl ?
 
         <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`} />
         :
