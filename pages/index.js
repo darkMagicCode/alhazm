@@ -264,7 +264,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
 
   }, []);
   return (
-    <Base>
+    <Base imgUrl={logo}>
       <section className='section banner pt-0'>
         <div className='container-xl'>
           <div className='relative'>
