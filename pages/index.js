@@ -178,7 +178,19 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
             duration: 0.5,
           },
           '>-.5',
-        );
+        )
+        // .fromTo(
+        //   '.animateCars',
+        //   {
+        //     y: 100,
+        //     opacity: 0,
+        //   },
+        //   {
+        //     y: 0,
+        //     opacity: 1,
+        //     duration: 2,
+        //   },
+        // );
 
       //parallax banner
       const parallaxTl = gsap.timeline({
@@ -226,6 +238,31 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+      const ctx = gsap.context(() => {
+        ['animateCars', 'animateCars1', 'animateCars2'].forEach((item, index) => {
+          gsap.fromTo(
+            `.${item}`,
+            { y: 100, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              scrollTrigger: {
+                trigger: `.${item}`,
+                start: 'top 90%',
+                toggleActions: 'play none none none',
+              },
+            }
+          );
+        });
+      });
+
+      return () => {
+        ctx.revert();
+      };
+
+  }, []);
   return (
     <Base>
       <section className='section banner pt-0'>
@@ -380,9 +417,9 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
             {markdownify(testimonial.title, 'h2', 'mt-4 section-title')}
             {markdownify(testimonial.description, 'p', 'mt-10')}
           </div>
-          <div className='animate row mt-10 items-center justify-center'>
+          <div className=' row mt-10 items-center justify-center'>
             <div className='xl:col-11'>
-              <div className='row items-center justify-center'>
+              <div className='row items-center justify-center animateCars'>
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
@@ -453,7 +490,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                   <ImageFallback src='/images/testimonials-02.png' width={455} height={522} alt='testimonials' />
                 </div>
               </div>
-              <div className='row items-center justify-center'>
+              <div className='row items-center justify-center animateCars1'>
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
@@ -524,7 +561,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                   <ImageFallback src='/images/testimonials-02.png' width={455} height={522} alt='testimonials' />
                 </div>
               </div>
-              <div className='row items-center justify-center'>
+              <div className='row items-center justify-center animateCars2'>
                 <div className='hidden lg:col-3 xl:col-4 lg:block'>
                   <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
                 </div>
