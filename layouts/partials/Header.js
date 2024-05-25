@@ -1,6 +1,7 @@
 import Logo from '@components/Logo'
 import config from '@config/config.json'
 import menu from '@config/menu.json'
+import ImageFallback from '@layouts/components/ImageFallback'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
@@ -42,16 +43,18 @@ const Header = () => {
     <>
       <div className="header-height-fix"></div>
       <header
-        className={`header ${sticky && 'header-sticky'} ${
+        className={`header ${!sticky && 'header-sticky'}
+        ${
           direction === 1 && 'unpinned'
-        }`}
+        }
+        `}
         ref={headerRef}
       >
-        <nav className="navbar container-xl">
+        <nav className="navbar container-xl ">
           {/* logo */}
           <div className="text-bold order-0 text-2xl ">
             {/* <Logo src={logo} /> */}
-            <div className="nav-dropdown-item" key={`children-${''}`}>
+            <div className="nav-dropdown-item hidden lg:flex" key={`children-${''}`}>
               <Link
                 style={{ color: '#D9AF62' }}
                 href={'/'}
@@ -60,8 +63,20 @@ const Header = () => {
                 Al-Hazm
               </Link>
             </div>
-          </div>
+            <div className="nav-dropdown-item flex lg:hidden " key={`children-${''}`}>
+            <Link
+                className="btn btn-primary lg:hidden flex justify-center items-center h-[52px] w-[122px] "
+                href={config.nav_button.link}
+              >
+                <span className='text-[16px]'>
 
+                {config.nav_button.label}
+                </span>
+              </Link>
+            </div>
+
+
+          </div>
           <ul
             id="nav-menu"
             className={`navbar-nav order-2 w-full justify-center lg:order-1 md:w-auto md:space-x-2 lg:flex ${
@@ -120,10 +135,10 @@ const Header = () => {
               </li>
             )}
           </ul>
-          <div className="order-1 ml-auto flex items-center md:ml-0">
+          <div className="order-1 ml-auto flex items-center md:ml-0 ">
             {config.nav_button.enable && (
               <Link
-                className="btn btn-primary hiddena lg:flex"
+                className="btn btn-primary hidden lg:flex "
                 href={config.nav_button.link}
               >
                 {config.nav_button.label}

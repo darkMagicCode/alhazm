@@ -247,7 +247,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
               <Circle className='circle bottom-[20%] right-[3%]' width={65} height={65} />
             </div>
 
-            <div className='row relative overflow-hidden rounded-2xl opacity-100'>
+            <div className='row relative overflow-hidden rounded-2xl opacity-100 h-[95vh] items-center justify-center'>
               <div
                 class='image-div absolute bottom-[0px] left-[0px] right-[0px] top-[0px] rounded-2xl'
                 style={{ zIndex: -100 }}
@@ -260,7 +260,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
                     {markdownify(
                       'Al-Hazm Co. offers the latest and most luxurious cars for rent. We are committed to ensuring the comfort of our customers',
                       'h1',
-                      'mb-8 banner-title opacity-0 text-2xl lg:text-5xl text-primary text-shadow-[0_4px_4px_rgba(0,0,0,0.25)]',
+                      'mb-8 banner-title opacity-0 text-2xl lg:text-5xl text-white ',
                     )}
                     {/* <div className="banner-btn opacity-0">
                       <Link className="btn btn-primary" href={banner.link.href}>
