@@ -13,7 +13,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
   const { base_url } = config.site;
   const router = useRouter();
   const main = useRef();
-
+  const { pathname } = router;
   //gsap fade animation
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -68,7 +68,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         });
       });
     }, main);
-
+    console.log(pathname);
     return () => ctx.revert();
   }, []);
   console.log(`${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`);
@@ -110,7 +110,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:description' content={plainify(description ? description : meta_description)} />
 
         {/* og-image */}
-        {!imgUrl ? (
+        {pathname !== '/' ? (
           <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`} />
         ) : (
           <meta
