@@ -127,7 +127,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial }) => {
         date: '2024-05-23',
       },
       content: 'Price start from',
-      slug: 'post-4',
+      slug: 'post-3',
     },
     {
       frontmatter: {
