@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ImageFallback from '@layouts/components/ImageFallback';
 import Link from 'next/link';
 import carRentalIcon from '../../public/images/rental-car.svg';
@@ -6,8 +6,18 @@ import star from '../../public/images/star.svg';
 import love from '../../public/images/love.svg';
 import config from '@config/config.json';
 import { IconButton, Typography } from '@material-tailwind/react';
+import SwiperCore,{ Autoplay, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
+
+SwiperCore.use([Autoplay, Pagination]);
 
 const DummyPost = props => {
+  const paginationRef = useRef(null);
+  const testimonialPaginationRef = useRef(null);
+  const testimonialPaginationRef1 = useRef(null);
+
+
   // const props.Link = {
   //   frontmatter: {
   //     image: props.Link.Link,
@@ -61,39 +71,41 @@ const DummyPost = props => {
   // let url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURI(message1.message)}&app_absent=0`;
   // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   const handleWhatsappClick = () => {
-     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-    window.open(url ,"_blank" )
+    window.open(url, '_blank');
     // window.location.href= '/'
     // const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  }
+  };
 
   // Appending the message to the URL by encoding it
   // url += ``;
-  const url = `/${blog_folder}/${props.Link.slug}` ;
+  const url = `/${blog_folder}/${props.Link.slug}`;
   const title = props.Link.frontmatter?.title;
   const description = 'AlHazam premium car rental services';
 
+  console.log(props);
   return (
-    <div onClick={()=> window.location.href = url} className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'>
-      {props.Link.frontmatter?.image && (
+    <div
+      onClick={() => (window.location.href = url)}
+      className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'
+    >
+      <Swiper
+        className='swiper-container'
+        slidesPerView={1}
+        autoplay={{ delay: 3000 }}
+        pagination={{ clickable: true }}
+        loop
+      >
+        {props.Link.images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img src={image} className='w-full h-full' alt={`Slide ${index}`} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {props.Link && (
         // <Link href={`/${blog_folder}/${props.Link.slug}`}>
-        <Link href={`/${blog_folder}/${props.Link.slug}`} onClick={() => console.log(url)}>
-          <div className='relative'>
-            <ImageFallback
-              className='  h-80 w-full object-cover object-fill object-center '
-              src={props.Link.frontmatter.image}
-              alt={props.Link.frontmatter?.title}
-              width={770}
-              height={335}
-            />
-
-            <div
-              style={{ zIndex: 1 }}
-              className=' absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-b from-black via-black to-transparent opacity-30'
-            ></div>
-          </div>
-        </Link>
+        <Link href={`/${blog_folder}/${props.Link.slug}`} onClick={() => console.log(url)}></Link>
       )}
       <div className='bg-gradient-to-b from-[#fdb6013a]  via-[#fdb6013f] to-transparent px-8 py-4  '>
         <h2 className='h4'>
@@ -132,7 +144,7 @@ const DummyPost = props => {
         </div>
       </div>
       <div
-        onClick={(e)=>{
+        onClick={e => {
           e.stopPropagation();
           handleWhatsappClick();
         }}
@@ -141,7 +153,6 @@ const DummyPost = props => {
         <ImageFallback src={carRentalIcon} width={25} height={25} alt='author' className='mr-2 ' />
 
         {config.nav_button.label}
-
       </div>
       {/* <SocialShare url={url} title={title} description={description} imageUrl={imageUrl1} /> */}
 
