@@ -3,8 +3,8 @@ import { gsap } from '@lib/gsap';
 import { plainify } from '@lib/utils/textConverter';
 import Footer from '@partials/Footer';
 import Header from '@partials/Header';
-import logo from '../public/images/logo.jpg';
 import Head from 'next/head';
+import logo from '../public/images/logo.jpg';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 
@@ -113,7 +113,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         {/* {pathname !== '/' ? (
           <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`} />
         ) : ( */}
-        <meta name='og:image' content={imgUrl} />
+        <meta name='og:image' content={logo} />
         {/* )} */}
         {/* <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2Fcar1%2F3.jpg&w=1200&q=75`} /> */}
         <meta property='og:image:width' content='1200' />

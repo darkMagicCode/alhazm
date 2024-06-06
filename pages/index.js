@@ -16,6 +16,7 @@ import logo1 from '../public/images/file.png';
 import brand1 from '../public/images/brand1.jpg';
 import brand2 from '../public/images/brand2.jpg';
 import brand33 from '../public/images/range-rover-logo-png-transparent.png';
+import logo from '../public/images/logo.jpg';
 
 const Home = ({ banner, brands, features, intro, speciality, testimonial, response }) => {
   const paginationRef = useRef(null);
@@ -160,7 +161,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
   }, []);
   console.log(data);
   return (
-    <Base imgUrl={'../public/images/logo dark.jpg'}>
+    <Base imgUrl={logo}>
       <section className='section banner pt-0'>
         <div className='container-xl'>
           <div className='relative'>
