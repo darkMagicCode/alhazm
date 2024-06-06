@@ -1,6 +1,6 @@
 import TwSizeIndicator from '@components/TwSizeIndicator';
 import config from '@config/config.json';
-import logo from '@public/images/logo.jpg';
+import logo from '../public/images/logo.jpg';
 import { Head, Html, Main, NextScript } from 'next/document';
 // import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
