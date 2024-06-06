@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import 'styles/style.scss';
-import logo from '@public/images/logo.jpg';
+import logo from '../public/images/logo.jpg';
 
 const App = ({ Component, pageProps }) => {
   // import google font css
