@@ -1,9 +1,9 @@
-import config from "@config/config.json";
-import theme from "@config/theme.json";
-import Head from "next/head";
-import { useEffect, useState } from "react";
-import TagManager from "react-gtm-module";
-import "styles/style.scss";
+import config from '@config/config.json';
+import theme from '@config/theme.json';
+import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import TagManager from 'react-gtm-module';
+import 'styles/style.scss';
 import logo from '../public/images/logo.jpg';
 
 const App = ({ Component, pageProps }) => {
@@ -12,11 +12,9 @@ const App = ({ Component, pageProps }) => {
   const sf = theme.fonts.font_family.secondary;
   const [fontcss, setFontcss] = useState();
   useEffect(() => {
-    fetch(
-      `https://fonts.googleapis.com/css2?family=${pf}${
-        sf ? "&family=" + sf : ""
-      }&display=swap`
-    ).then((res) => res.text().then((css) => setFontcss(css)));
+    fetch(`https://fonts.googleapis.com/css2?family=${pf}${sf ? '&family=' + sf : ''}&display=swap`).then(res =>
+      res.text().then(css => setFontcss(css)),
+    );
   }, [pf, sf]);
 
   // google tag manager (gtm)
@@ -25,9 +23,7 @@ const App = ({ Component, pageProps }) => {
   };
   useEffect(() => {
     setTimeout(() => {
-      process.env.NODE_ENV === "production" &&
-        config.params.tag_manager_id &&
-        TagManager.initialize(tagManagerArgs);
+      process.env.NODE_ENV === 'production' && config.params.tag_manager_id && TagManager.initialize(tagManagerArgs);
     }, 5000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -36,24 +32,17 @@ const App = ({ Component, pageProps }) => {
     <>
       <Head>
         {/* google font css */}
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />
         <style
           dangerouslySetInnerHTML={{
             __html: `${fontcss}`,
           }}
         />
 
-<meta name='og:image' content={logo} />
+        <meta name='og:image' content={logo} />
 
         {/* responsive meta */}
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=5"
-        />
+        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5' />
       </Head>
       <Component {...pageProps} />
     </>
