@@ -2,7 +2,7 @@
 const GoogleMap = () => (
   <div>
     <iframe
-      width='520'
+      width='450'
       height='400'
       frameBorder='0'
       scrolling='no'
