@@ -4,9 +4,11 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import 'styles/style.scss';
-import logo from '../public/images/logo.jpg';
+// import logo from '../public/images/logo.jpg';
+
 
 const App = ({ Component, pageProps }) => {
+  const { logo } = config.site
   // import google font css
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
