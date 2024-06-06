@@ -99,7 +99,7 @@ const DummyPost = props => {
       >
         {props.Link.images.map((image, index) => (
           <SwiperSlide key={index}>
-            <img src={image} className='w-full h-full' alt={`Slide ${index}`} />
+            <img src={image} className='w-full h-[350px]' alt={`Slide ${index}`} />
           </SwiperSlide>
         ))}
       </Swiper>
