@@ -160,7 +160,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
   }, []);
   console.log(data);
   return (
-    <Base imgUrl={'logo'}>
+    <Base imgUrl={'../public/images/logo dark.jpg'}>
       <section className='section banner pt-0'>
         <div className='container-xl'>
           <div className='relative'>
