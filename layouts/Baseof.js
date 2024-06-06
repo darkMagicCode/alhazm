@@ -10,6 +10,8 @@ import { useEffect, useRef } from 'react';
 
 const Base = ({ title, meta_title, description, image, noindex, canonical, children, name, folder, imgUrl }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
+  const { logo1 } = config.site
+
   const { base_url } = config.site;
   const router = useRouter();
   const main = useRef();
@@ -113,7 +115,7 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         {/* {pathname !== '/' ? (
           <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`} />
         ) : ( */}
-        {/* <meta name='og:image' content={logo} /> */}
+        <meta name='og:image' content={logo1} />
         {/* )} */}
         {/* <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2Fcar1%2F3.jpg&w=1200&q=75`} /> */}
         {/* <meta property='og:image:width' content='1200' /> */}
