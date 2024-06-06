@@ -161,7 +161,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
   }, []);
   console.log(data);
   return (
-    <Base imgUrl={logo}>
+    <Base imgUrl={'https://alhazmcarrental.vercel.app/images/logo.jpg'}>
     <>
 
     <section className='section banner pt-0'>

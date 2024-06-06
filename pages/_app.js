@@ -40,7 +40,7 @@ const App = ({ Component, pageProps }) => {
             __html: `${fontcss}`,
           }}
         />
-        <meta name='og:image' content={'https://alhazmcarrental.vercel.app/images/logo.jpg'} />
+        {/* <meta name='og:image' content={'https://alhazmcarrental.vercel.app/images/logo.jpg'} /> */}
 
         {/* responsive meta */}
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5' />
