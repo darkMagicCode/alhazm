@@ -13,7 +13,9 @@ import DummyPost from '@layouts/partials/DummyPost';
 import Link1 from '../public/images/car1/1.jpg';
 import Link3 from '../public/images/car1/3.jpg';
 import logo1 from '../public/images/file.png';
-import logo from '../public/images/logo.jpg';
+import brand1 from '../public/images/brand1.jpg';
+import brand2 from '../public/images/brand2.jpg';
+import brand33 from '../public/images/range-rover-logo-png-transparent.png';
 
 const Home = ({ banner, brands, features, intro, speciality, testimonial, response }) => {
   const paginationRef = useRef(null);
@@ -23,7 +25,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
   const brandRef = useRef(null);
   const [data, setData] = useState(response);
   const [loading, setloading] = useState(false);
-
+  console.log(brands, 'asdad');
   const fetchData = async () => {
     try {
       setloading(true);
@@ -49,7 +51,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
   useEffect(() => {
     fetchData();
   }, []);
-
+  const brandsx = [brand1, brand2, brand33];
   useEffect(() => {
     const ctx = gsap.context(() => {
       const banner = document.querySelector('.banner');
@@ -58,9 +60,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
       const header = document.querySelector('.header');
       const tl = gsap.timeline();
 
-      tl
-      .fromTo('.banner-title', { y: 35, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.5 } )
-      .fromTo('.banner-img', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.5 })
+      tl.fromTo('.banner-title', { y: 35, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, delay: 0.5 })
         .fromTo('.banner-btn', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, '>-0.4')
         .fromTo(
           '.banner-img',
@@ -189,7 +189,13 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
               <div className='col-12 h-[600px] '>
                 <div className='row relative justify-center pb-10'>
                   <div className=' col-10 items-center pb-10 pt-0 text-center'>
-                    <ImageFallback src={logo1} width={'w-full'} height={'w-full'} lazy className='banner-title opacity-0' />
+                    <ImageFallback
+                      src={logo1}
+                      width={'w-full'}
+                      height={'w-full'}
+                      lazy
+                      className='banner-title opacity-0'
+                    />
                     {markdownify(
                       'Al-Hazm Co. offers the latest and most luxurious cars for rent. We are committed to ensuring the comfort of our customers',
                       'h1',
@@ -228,19 +234,22 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
                     },
                   }}
                 >
-                  {brands.map((brand, index) => (
+                  {brandsx.map((brand, index) => (
                     <SwiperSlide
-                      className=' h-60 cursor-pointer px-6 py-6 grayscale  transition hover:grayscale-0 lg:px-10'
-                      key={'brand-' + index}
+                      className='  cursor-pointer px-6 py-6 grayscale  transition hover:grayscale-0 lg:px-10 bg-blaack'
+                      key={'brand-'}
                     >
-                      <div className='relative h-full'>
+                      <div className='relative ' >
                         <ImageFallback
-                          className='h-full w-full object-contain'
+                          className=' '
                           src={brand}
-                          sizes='100vw'
+                          width={350}
+                          height={350}
+                          // sizes='100vw'
                           alt=''
-                          fill={true}
-                          priority={true}
+                          // fill={true}
+                          // priority={true}
+                          fallback={''}
                         />
                       </div>
                     </SwiperSlide>
@@ -288,9 +297,8 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
               ))}
               {loading && (
                 <>
-                  <div className='animateCars row items-center justify-center bg-blaack text-center'>
-                    <div className='hidden lg:col-3 xl:col-4 lg:block'>
-                    </div>
+                  <div className='animateCars bg-blaack row items-center justify-center text-center'>
+                    <div className='hidden lg:col-3 xl:col-4 lg:block'></div>
                     <div className='rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
                       <div role='status my-10'>
                         <svg
