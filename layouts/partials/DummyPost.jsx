@@ -87,7 +87,7 @@ const DummyPost = props => {
   console.log(props);
   return (
     <div
-      onClick={() => (window.location.href = url)}
+      // onClick={() => (window.location.href = '/')}
       className='shadows-[0_10px_35px_rgba(0,0,0,.05)] relative overflow-hidden  rounded-2xl'
     >
       <Swiper
@@ -103,16 +103,16 @@ const DummyPost = props => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {props.Link && (
+      {/* {props.Link && (
         // <Link href={`/${blog_folder}/${props.Link.slug}`}>
-        <Link href={`/${blog_folder}/${props.Link.slug}`} onClick={() => console.log(url)}></Link>
-      )}
+        // <Link href={`/`} onClick={() => console.log(url)}></Link>
+      )} */}
       <div className='bg-gradient-to-b from-[#fdb6013a]  via-[#fdb6013f] to-transparent px-8 py-4  '>
         <h2 className='h4  text-center '>
-          <Link href={`/${blog_folder}/${props.Link.slug}`} className='block w-full hover:text-primary hover:underline'>
+          <div className='block w-full hover:text-primary hover:underline'>
           <span>{props.Link.name}</span>
 
-          </Link>
+          </div>
         </h2>
         {/* <p className='mt-2'>{props.Link.content?.slice(0, summary_length)}...</p> */}
         {/* <div className='mt-4 flex items-center justify-between'>
