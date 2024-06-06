@@ -1,6 +1,5 @@
 import TwSizeIndicator from '@components/TwSizeIndicator';
 import config from '@config/config.json';
-import logo from '../public/images/logo.jpg';
 import { Head, Html, Main, NextScript } from 'next/document';
 // import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -18,7 +17,7 @@ const Document = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
 
         {/* favicon */}
-        <meta name='og:image' content={logo} />
+        <link rel='shortcut icon' href={favicon} />
         {/* theme meta */}
         <meta name='theme-name' content='AlHazam-light-nextjs' />
         <meta name='msapplication-TileColor' content='#000000' />

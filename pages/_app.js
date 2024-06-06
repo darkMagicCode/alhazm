@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import TagManager from "react-gtm-module";
 import "styles/style.scss";
+import logo from '../public/images/logo.jpg';
 
 const App = ({ Component, pageProps }) => {
   // import google font css
@@ -45,13 +46,9 @@ const App = ({ Component, pageProps }) => {
             __html: `${fontcss}`,
           }}
         />
-          <meta
-          property='og:image'
-          // itemprop="image"
-          content={
-            'https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/307486267_478264784323046_501080229019256398_n.jpg?stp=cp6_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGyY-5dCdHvw9S34xTiaezM0RkwMFACcyjRGTAwUAJzKEeIPJb6YZbstNbv152yZQdkgWjRRTJC83lGW902b77i&_nc_ohc=GZVYPhrYRuoQ7kNvgGJeI0I&_nc_ht=scontent.fcai19-3.fna&oh=00_AYCqmaEbnWYMVAEd22aiq30h6qR9f0ISVD1752zHTBCK7Q&oe=66567FFA'
-          }
-        />
+
+<meta name='og:image' content={logo} />
+
         {/* responsive meta */}
         <meta
           name="viewport"
