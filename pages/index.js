@@ -161,7 +161,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
   }, []);
   console.log(data);
   return (
-    // <Base imgUrl={logo}>
+    <Base imgUrl={logo}>
     <>
 
     <section className='section banner pt-0'>
@@ -420,7 +420,7 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
     {/* Cta */}
     {/* <Cta /> */}
     </>
-    // </Base>
+     </Base>
   );
 };
 
