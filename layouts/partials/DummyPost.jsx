@@ -115,7 +115,7 @@ const DummyPost = props => {
           </Link>
         </h2>
         {/* <p className='mt-2'>{props.Link.content?.slice(0, summary_length)}...</p> */}
-        <div className='mt-4 flex items-center justify-between'>
+        {/* <div className='mt-4 flex items-center justify-between'>
           <div className='overflow-hidden rounded-full border-2 border-white shadow-[0_0_0_2px] shadow-primary'>
             <ImageFallback src={props.Link.frontmatter?.author?.avatar} width={50} height={50} alt='author' />
           </div>
@@ -124,7 +124,7 @@ const DummyPost = props => {
           </Typography>
           <div className='pl-5'>
             {/* <p className='font-medium text-dark'>{props.Link.frontmatter?.author?.name}</p> */}
-            <p className='flex items-center justify-evenly'>
+            {/* <p className='flex items-center justify-evenly'>
               <Typography color='blue-gray' className='flex items-center gap-1.5 font-normal'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -142,7 +142,7 @@ const DummyPost = props => {
               </Typography>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       <div
         onClick={e => {
