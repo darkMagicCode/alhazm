@@ -108,9 +108,10 @@ const DummyPost = props => {
         <Link href={`/${blog_folder}/${props.Link.slug}`} onClick={() => console.log(url)}></Link>
       )}
       <div className='bg-gradient-to-b from-[#fdb6013a]  via-[#fdb6013f] to-transparent px-8 py-4  '>
-        <h2 className='h4'>
+        <h2 className='h4  text-center '>
           <Link href={`/${blog_folder}/${props.Link.slug}`} className='block w-full hover:text-primary hover:underline'>
-            {props.Link.frontmatter?.title}
+          <span>{props.Link.name}</span>
+
           </Link>
         </h2>
         {/* <p className='mt-2'>{props.Link.content?.slice(0, summary_length)}...</p> */}
@@ -119,7 +120,7 @@ const DummyPost = props => {
             <ImageFallback src={props.Link.frontmatter?.author?.avatar} width={50} height={50} alt='author' />
           </div>
           <Typography color='blue-gray' className=' font-medium'>
-            From 200$
+            {props.Link.name}
           </Typography>
           <div className='pl-5'>
             {/* <p className='font-medium text-dark'>{props.Link.frontmatter?.author?.name}</p> */}

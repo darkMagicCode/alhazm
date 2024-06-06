@@ -27,8 +27,8 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -257,30 +257,28 @@ const Home = ({ banner, brands, features, intro, speciality, testimonial, respon
           </div>
           <div className=' row mt-10 items-center justify-center'>
             <div className='xl:col-11'>
-              {data?.map((d, i) => <>
+              {data?.map((d, i) => (
+                <>
+                  <div className='animateCars row items-center justify-center'>
+                    <div className='hidden lg:col-3 xl:col-4 lg:block'>
+                      <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
+                    </div>
+                    <div className='rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
+                      <DummyPost Link={d} />
 
-                <div className='animateCars row items-center justify-center'>
-                  <div className='hidden lg:col-3 xl:col-4 lg:block'>
-                    <ImageFallback src='/images/testimonials-01.png' width={455} height={522} alt='testimonials' />
-                  </div>
-                  <div className='rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,.05)] md:col-7 lg:col-6 xl:col-4'>
-
-                              <DummyPost Link={d} />
-
-
-                    <div className='relative h-8'>
-                      <div
-                        className='pagination absolute left-1/2 -translate-x-1/2'
-                        ref={testimonialPaginationRef1}
-                      ></div>
+                      <div className='relative h-8'>
+                        <div
+                          className='pagination absolute left-1/2 -translate-x-1/2'
+                          ref={testimonialPaginationRef1}
+                        ></div>
+                      </div>
+                    </div>
+                    <div className='hidden lg:col-3 xl:col-4 lg:block'>
+                      <ImageFallback src='/images/testimonials-02.png' width={455} height={522} alt='testimonials' />
                     </div>
                   </div>
-                  <div className='hidden lg:col-3 xl:col-4 lg:block'>
-                    <ImageFallback src='/images/testimonials-02.png' width={455} height={522} alt='testimonials' />
-                  </div>
-                </div>
-              </>
-              )}
+                </>
+              ))}
             </div>
           </div>
         </div>
@@ -373,7 +371,6 @@ export default Home;
 
 // for homepage data
 export const getStaticProps = async () => {
-
   const homepage = await getListPage('content/_index.md');
   const { frontmatter } = homepage;
   const { banner, brands, features, intro, speciality, testimonial } = frontmatter;
