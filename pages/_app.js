@@ -38,7 +38,6 @@ const App = ({ Component, pageProps }) => {
             __html: `${fontcss}`,
           }}
         />
-
         <meta name='og:image' content={logo} />
 
         {/* responsive meta */}
