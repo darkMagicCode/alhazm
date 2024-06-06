@@ -110,16 +110,11 @@ const Base = ({ title, meta_title, description, image, noindex, canonical, child
         <meta name='twitter:description' content={plainify(description ? description : meta_description)} />
 
         {/* og-image */}
-        {pathname !== '/' ? (
+        {/* {pathname !== '/' ? (
           <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2F${folder}%2F${name}&w=1200&q=75`} />
-        ) : (
-          <meta
-            name='og:image'
-            content={
-              'https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/307486267_478264784323046_501080229019256398_n.jpg?stp=cp6_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGyY-5dCdHvw9S34xTiaezM0RkwMFACcyjRGTAwUAJzKEeIPJb6YZbstNbv152yZQdkgWjRRTJC83lGW902b77i&_nc_ohc=GZVYPhrYRuoQ7kNvgGJeI0I&_nc_ht=scontent.fcai19-3.fna&oh=00_AYCqmaEbnWYMVAEd22aiq30h6qR9f0ISVD1752zHTBCK7Q&oe=66567FFA'
-            }
-          />
-        )}
+        ) : ( */}
+        <meta name='og:image' content={imgUrl} />
+        {/* )} */}
         {/* <meta name='og:image' content={`${base_url}_next/image?url=%2Fimages%2Fcar1%2F3.jpg&w=1200&q=75`} /> */}
         <meta property='og:image:width' content='1200' />
         <meta property='og:image:height' content='630' />
